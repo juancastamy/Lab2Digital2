@@ -1,7 +1,7 @@
 /*
  * Second lab for Digital 2 course
  * File:   lab_2.c
- * Author: Juan Castillo
+ * Author: Juan Diego Castillo Amaya
  * Student ID: 17074
  *
  * Created on Jan. 26, 2020
