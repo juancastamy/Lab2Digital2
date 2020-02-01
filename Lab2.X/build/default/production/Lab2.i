@@ -2514,6 +2514,42 @@ extern __bank0 __bit __timeout;
 # 34 "Lab2.c" 2
 
 
+char ESTADOS = 0;
+char ESTADOR = 0;
+char sum = 0;
+
+void setup(void);
 void main(void) {
+    setup ();
+# 57 "Lab2.c"
+    while(1){
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        if (ADCON0bits.GO_DONE == 0){
+            ADCON0bits.GO_DONE = 1;
+        }
+        PORTA = ADRESH;
+        return;
+# 80 "Lab2.c"
+    }
     return;
+    }
+void setup(void){
+
+    TRISA = 0;
+    TRISC = 0;
+    TRISE = 1;
+    TRISB = 0b00100101;
+    ANSEL = 0;
+    ANSELH = 0b00100000;
+    OSCCONbits.IRCF = 0b110;
+    TRISEbits.TRISE3 = 1;
+    TRISEbits.TRISE0 = 1;
+
+    ADCON0bits.ADCS = 0b01;
+    ADCON0bits.CHS = 0b1101;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+    PORTA = 0;
 }

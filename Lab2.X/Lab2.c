@@ -32,7 +32,36 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
+#define _XTAL_FREQ 4000000
+char ESTADOS = 0;
+char ESTADOR = 0;
+char sum = 0;
+
 
 void main(void) {
+    while(1){
+        TRISA = 0;
+        TRISC = 0;
+        TRISE = 1;
+        TRISB = 0b00100101;
+        ANSEL = 0;
+        ANSELH = 0b00100000;
+        if(PORTEbits.RE3 == 1){
+            ESTADOS= 1;
+        }
+        if(PORTEbits.RE3 == 0 && ESTADOS ==1){
+            sum = sum+1;
+            PORTA = sum;
+            ESTADOS = 0;
+        }
+        if(PORTEbits.RE0 == 1){
+            ESTADOR= 1;
+        }
+        if(PORTEbits.RE0 == 0  && ESTADOR ==1){
+            sum = sum-1;
+            PORTA = sum;
+            ESTADOR = 0;
+        }
+    }
     return;
-}
+    }
