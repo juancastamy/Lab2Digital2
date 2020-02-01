@@ -11,13 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\juan\AppData\Local\Temp\sdhs.o
+$C:\Users\juan\AppData\Local\Temp\s9c4.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Lab2.X.production.o
 cinit CODE 0 7F9 7F9 7 2
-text1 CODE 0 7D0 7D0 29 2
-maintext CODE 0 7B8 7B8 18 2
+text1 CODE 0 7A2 7A2 26 2
+text2 CODE 0 7C8 7C8 31 2
+text3 CODE 0 77E 77E 11 2
+maintext CODE 0 78F 78F 13 2
 cstackCOMMON COMMON 1 73 73 1 1
 bssCOMMON COMMON 1 70 70 3 1
 # %UNUSED Section
@@ -34,13 +36,13 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-7B7 2
+CONST 3-77D 2
 CONST 800-1FFF 2
-ENTRY 3-7B7 2
+ENTRY 3-77D 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-7B7 2
+CODE 3-77D 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -48,9 +50,9 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 74-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-7B7 2
+STRCODE 3-77D 2
 STRCODE 800-1FFF 2
-STRING 3-7B7 2
+STRING 3-77D 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -66,39 +68,60 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab2.X.production.o
-7F9 cinit CODE >455:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7F9 cinit CODE >458:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7F9 cinit CODE >475:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7FA cinit CODE >476:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7FB cinit CODE >477:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7FC cinit CODE >483:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7FC cinit CODE >485:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7FD cinit CODE >486:C:\Users\juan\AppData\Local\Temp\sdhs.s
-7D0 text1 CODE >83:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7D0 text1 CODE >85:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7D3 text1 CODE >86:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7D4 text1 CODE >87:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7D6 text1 CODE >88:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7D8 text1 CODE >89:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7DB text1 CODE >90:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7DD text1 CODE >91:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7E3 text1 CODE >92:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7E4 text1 CODE >93:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7E5 text1 CODE >95:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7EB text1 CODE >96:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7EF text1 CODE >97:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7F0 text1 CODE >98:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7F3 text1 CODE >99:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7F4 text1 CODE >100:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7F5 text1 CODE >101:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7F8 text1 CODE >102:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7B8 maintext CODE >41:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7B8 maintext CODE >42:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7BD maintext CODE >58:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7C4 maintext CODE >59:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7CA maintext CODE >60:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7CB maintext CODE >62:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-7CD maintext CODE >82:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7F9 cinit CODE >464:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7F9 cinit CODE >467:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7F9 cinit CODE >484:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7FA cinit CODE >485:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7FB cinit CODE >486:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7FC cinit CODE >492:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7FC cinit CODE >494:C:\Users\juan\AppData\Local\Temp\s9c4.s
+7FD cinit CODE >495:C:\Users\juan\AppData\Local\Temp\s9c4.s
+77E text3 CODE >71:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+77E text3 CODE >72:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+77E text3 CODE >73:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+785 text3 CODE >74:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+78B text3 CODE >75:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+78C text3 CODE >77:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+78E text3 CODE >80:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C8 text2 CODE >50:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C8 text2 CODE >51:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C8 text2 CODE >52:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7CE text2 CODE >53:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7D0 text2 CODE >54:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7D0 text2 CODE >55:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7D9 text2 CODE >56:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7DE text2 CODE >57:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7E0 text2 CODE >58:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7E1 text2 CODE >60:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7E5 text2 CODE >61:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7E7 text2 CODE >62:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7E7 text2 CODE >63:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7F0 text2 CODE >64:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7F5 text2 CODE >65:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7F7 text2 CODE >66:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7F8 text2 CODE >70:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7A2 text1 CODE >81:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7A2 text1 CODE >83:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7A5 text1 CODE >84:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7A7 text1 CODE >85:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7A8 text1 CODE >87:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7AA text1 CODE >88:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7AD text1 CODE >89:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7AF text1 CODE >90:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7B5 text1 CODE >91:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7B6 text1 CODE >92:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7B7 text1 CODE >94:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7BD text1 CODE >95:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C1 text1 CODE >96:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C2 text1 CODE >97:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C5 text1 CODE >98:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C6 text1 CODE >99:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+7C7 text1 CODE >100:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+78F maintext CODE >43:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+78F maintext CODE >44:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+794 maintext CODE >45:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+794 maintext CODE >46:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+799 maintext CODE >47:C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -119,20 +142,22 @@ __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\sdhs.o
-_main F70 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+_LEDS F90 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\s9c4.o
+_main F1E 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
-start 0 0 CODE 0 init C:\Users\juan\AppData\Local\Temp\sdhs.o
+start 0 0 CODE 0 init C:\Users\juan\AppData\Local\Temp\s9c4.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
+__size_of_LEDS 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\sdhs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s9c4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -141,14 +166,15 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 1E 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\sdhs.o
-___stacklo 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\sdhs.o
+___stackhi 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\s9c4.o
+___stacklo 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\s9c4.o
+_DISPLAY EFC 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 start_initialization FF2 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 _TRISEbits 89 0 ABS 0 - dist/default/production\Lab2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\sdhs.o
+___int_sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\s9c4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -166,6 +192,7 @@ __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit FF2 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
+_PORTBbits 6 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 0 0 CODE 0 init -
@@ -187,15 +214,18 @@ __S0 2009 0 ABS 0 - -
 __S1 74 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+_sum 70 0 COMMON 1 bssCOMMON dist/default/production\Lab2.X.production.o
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juan\AppData\Local\Temp\sdhs.o
-__pmaintext F70 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juan\AppData\Local\Temp\s9c4.o
+__pmaintext F1E 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
+_ESTADOR 71 0 COMMON 1 bssCOMMON dist/default/production\Lab2.X.production.o
+_ESTADOS 72 0 COMMON 1 bssCOMMON dist/default/production\Lab2.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -208,9 +238,12 @@ __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
+__size_of_DISPLAY 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 FA0 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__ptext1 F44 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__ptext2 F90 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__ptext3 EFC 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -219,18 +252,21 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main FA0 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+__end_of_LEDS FF2 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__end_of_main F44 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Lab2.X.production.o
+_PORTC 7 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Lab2.X.production.o
-__end_of_setup FF2 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__end_of_setup F90 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_setup FA0 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+_setup F44 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__end_of_DISPLAY F1E 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
 __initialization FF2 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -260,8 +296,10 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Lab2.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F9 FF2 7 2
-text1 0 7D0 FA0 29 2
-maintext 0 7B8 F70 18 2
+text1 0 7A2 F44 26 2
+text2 0 7C8 F90 31 2
+text3 0 77E EFC 11 2
+maintext 0 78F F1E 13 2
 reset_vec 0 0 0 3 2
 bssCOMMON 1 70 70 4 1
 config 0 2007 400E 2 2

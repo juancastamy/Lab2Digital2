@@ -36,32 +36,65 @@
 char ESTADOS = 0;
 char ESTADOR = 0;
 char sum = 0;
-
+void LEDS (void);
+void DISPLAY (void);
+void setup(void);
 
 void main(void) {
+    setup ();
     while(1){
-        TRISA = 0;
-        TRISC = 0;
-        TRISE = 1;
-        TRISB = 0b00100101;
-        ANSEL = 0;
-        ANSELH = 0b00100000;
-        if(PORTEbits.RE3 == 1){
+        DISPLAY();
+        LEDS();
+    }
+    }
+void LEDS (void){
+    while(1){
+        if(PORTBbits.RB6 == 1){
             ESTADOS= 1;
         }
-        if(PORTEbits.RE3 == 0 && ESTADOS ==1){
+        if(PORTBbits.RB6 == 0 && ESTADOS ==1){
             sum = sum+1;
-            PORTA = sum;
+            PORTC = sum;
             ESTADOS = 0;
         }
-        if(PORTEbits.RE0 == 1){
+        if(PORTBbits.RB7 == 1){
             ESTADOR= 1;
         }
-        if(PORTEbits.RE0 == 0  && ESTADOR ==1){
+        if(PORTBbits.RB7 == 0  && ESTADOR ==1){
             sum = sum-1;
-            PORTA = sum;
+            PORTC = sum;
             ESTADOR = 0;
         }
+        return;
     }
-    return;
+}
+void DISPLAY (void) {
+    while (1){
+        __delay_ms(1);
+         if (ADCON0bits.GO_DONE == 0){
+             ADCON0bits.GO_DONE = 1;
+         }
+         PORTA = ADRESH;
+         return;
     }
+}
+void setup(void){
+    //PUERTOS DE SALIDA Y ENTRADA
+    TRISA = 0;
+    TRISE = 1;
+    TRISC = 0;
+    //TRISD = 0b00001100;
+    TRISB = 0b11100101;
+    ANSEL = 0;
+    ANSELH = 0b00100000;
+    OSCCONbits.IRCF = 0b110;
+    TRISEbits.TRISE3 = 1;
+    TRISEbits.TRISE0 = 1;
+    // CONFIGURACIÓN EL ADC
+    ADCON0bits.ADCS = 0b01;//SE CONFIGURO LA FRECUENCIA DEL ADC
+    ADCON0bits.CHS = 0b1101; //SE ECOGE EL PUERTO ENTRADA
+    ADCON0bits.ADON = 1; //SE ENCIRENDE EL ADC
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+}

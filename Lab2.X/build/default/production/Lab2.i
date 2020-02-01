@@ -2517,28 +2517,55 @@ extern __bank0 __bit __timeout;
 char ESTADOS = 0;
 char ESTADOR = 0;
 char sum = 0;
-
+void LEDS (void);
+void DISPLAY (void);
 void setup(void);
+
 void main(void) {
     setup ();
-# 57 "Lab2.c"
     while(1){
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        if (ADCON0bits.GO_DONE == 0){
-            ADCON0bits.GO_DONE = 1;
+        DISPLAY();
+        LEDS();
+    }
+    }
+void LEDS (void){
+    while(1){
+        if(PORTBbits.RB6 == 1){
+            ESTADOS= 1;
         }
-        PORTA = ADRESH;
+        if(PORTBbits.RB6 == 0 && ESTADOS ==1){
+            sum = sum+1;
+            PORTC = sum;
+            ESTADOS = 0;
+        }
+        if(PORTBbits.RB7 == 1){
+            ESTADOR= 1;
+        }
+        if(PORTBbits.RB7 == 0 && ESTADOR ==1){
+            sum = sum-1;
+            PORTC = sum;
+            ESTADOR = 0;
+        }
         return;
-# 80 "Lab2.c"
     }
-    return;
+}
+void DISPLAY (void) {
+    while (1){
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+         if (ADCON0bits.GO_DONE == 0){
+             ADCON0bits.GO_DONE = 1;
+         }
+         PORTA = ADRESH;
+         return;
     }
+}
 void setup(void){
 
     TRISA = 0;
-    TRISC = 0;
     TRISE = 1;
-    TRISB = 0b00100101;
+    TRISC = 0;
+
+    TRISB = 0b11100101;
     ANSEL = 0;
     ANSELH = 0b00100000;
     OSCCONbits.IRCF = 0b110;
@@ -2551,5 +2578,4 @@ void setup(void){
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG1 = 0;
     ADCON1bits.VCFG0 = 0;
-    PORTA = 0;
 }
