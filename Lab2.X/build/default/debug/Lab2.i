@@ -2513,280 +2513,76 @@ extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 34 "Lab2.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
 
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 35 "Lab2.c" 2
-
-
-char ESTADOS;
-char ESTADOR;
-char sum;
-char n1;
-char n2;
-char change;
-char COMP;
-unsigned char SEGMENTO1[] = {0x3F,0x06,0x6D,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71,};
-unsigned char SEGMENTO2[] = {0x3F,0x06,0x6D,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71,};
-
+char ESTADOS = 0;
+char ESTADOR = 0;
+char sum = 0;
 void LEDS (void);
 void DISPLAY (void);
 void setup(void);
-void REBOTE(void);
-void INTERCAMBIO(void);
-void BITS(void);
-void ALARMA(void);
 
-void __attribute__((picinterrupt(("")))) ISR(void){
-
-    if(RBIF==1){
-        RBIF= 0;
+void __attribute__((picinterrupt(("")))) isr(void){
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+    if(INTF==1){
         LEDS();
-        return;
-    }
-    if(ADIF ==1) {
-        ADIF = 0;
-        n1 = ADRESH;
-        n2 = ADRESH;
-        COMP = ADRESH;
-        return;
-    }
-    if (T0IF==1){
-        REBOTE();
-        T0IF=0;
-        TMR0=2;
-        PORTA =sum;
-
-        return;
+        INTF = 0;
     }
 }
 
 void main(void) {
-        setup();
-        DISPLAY();
-        INTERCAMBIO();
-}
-void setup(void){
 
     TRISA = 0;
     TRISC = 0;
-    TRISD = 0x0C;
-    TRISB = 0xE0;
+
+    TRISB = 0b11100000;
     ANSEL = 0;
-    ANSELH = 0x20;
-    OSCCON = 0x71;
+    ANSELH = 0b00100000;
+    OSCCONbits.IRCF = 0b110;
 
+    ADCON0bits.ADCS = 0b01;
+    ADCON0bits.CHS = 0b1101;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
 
-    ADCON0 = 0x75;
-    ADCON1 = 0x00;
-
-
-    INTCON = 0xE8;
-    PIE1bits.ADIE = 1;
-    PIR1bits.ADIF = 0;
+    INTCON =0xE8;
     IOCB = 0xC0;
-    OPTION_REG = 0x80;
-    TMR0 = 2;
-    PORTC =0;
-}
-
+    PORTA = 0;
+    DISPLAY();
+    isr();
+    }
 void LEDS (void){
+    while(1){
     if(PORTBbits.RB7==1){
         ESTADOS =1;
         ESTADOR= 0;
-        (INTCONbits.GIE = 0);
     }
-    if(PORTBbits.RB7==0 && ESTADOS == 1){
+    if(PORTBbits.RB7==0 && ESTADOS ==1){
         sum=sum+1;
         ESTADOS=0;
-        (INTCONbits.GIE = 1);
+        PORTA = sum;
         return;
         }
     if(PORTBbits.RB6==1){
         ESTADOS=0;
         ESTADOR=1;
-        (INTCONbits.GIE = 0);
     }
     if(PORTBbits.RB6==0 && ESTADOR ==1){
         ESTADOR = 0;
         sum = sum-1;
-        (INTCONbits.GIE = 1);
+        PORTA = sum;
         return;
+    }
     }
 }
 void DISPLAY (void) {
-    while(1){
-        if(COMP > sum){
-            PORTDbits.RD0 = 1;
-        }
-        else{
-            PORTDbits.RD0 = 0;
-        }
+    while (1){
         _delay((unsigned long)((1)*(4000000/4000.0)));
-        if (ADCON0bits.GO_DONE == 0){
-        BITS();
-        INTERCAMBIO();
-        ADCON0bits.GO_DONE = 1;
-        }
+         if (ADCON0bits.GO_DONE == 0){
+             ADCON0bits.GO_DONE = 1;
+         }
+         PORTC = ADRESH;
+         return;
     }
-}
-void REBOTE(void){
-    if(change == 1){
-        change = 0;
-        return;
-    }
-    else{
-        change = 1;
-        return;
-    }
-}
-void INTERCAMBIO (void){
-    if(change == 1){
-        PORTC = SEGMENTO1 [n1];
-        PORTDbits.RD3 = 1;
-        PORTDbits.RD2 = 0;
-        return;
-    }
-    if(change == 0){
-        PORTDbits.RD3 = 0;
-        PORTDbits.RD2 = 1;
-        PORTC = SEGMENTO2 [n2];
-        return;
-    }
-}
-void BITS (void){
-    n1 = n1 & 0x0F;
-    n2 = ((n2 & 0xF0)>>4);
-
-    return;
 }
