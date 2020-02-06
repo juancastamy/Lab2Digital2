@@ -11,27 +11,45 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"55 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
+"39 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"79
+"60
 [v _main main `(v  1 e 1 0 ]
-"84
+"3 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\libreria.c
 [v _setup setup `(v  1 e 1 0 ]
-"108
+"30
 [v _LEDS LEDS `(v  1 e 1 0 ]
-"132
+"54
 [v _DISPLAY DISPLAY `(v  1 e 1 0 ]
-"148
+"73
 [v _REBOTE REBOTE `(v  1 e 1 0 ]
-"158
+"83
 [v _INTERCAMBIO INTERCAMBIO `(v  1 e 1 0 ]
-"172
+"98
 [v _BITS BITS `(v  1 e 1 0 ]
+"45 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X/libreria.h
+[v _ESTADOS ESTADOS `uc  1 e 1 0 ]
+"46
+[v _ESTADOR ESTADOR `uc  1 e 1 0 ]
+"47
+[v _sum sum `uc  1 e 1 0 ]
+"48
+[v _n1 n1 `uc  1 e 1 0 ]
+"49
+[v _n2 n2 `uc  1 e 1 0 ]
+"50
+[v _change change `uc  1 e 1 0 ]
+"51
+[v _COMP COMP `uc  1 e 1 0 ]
+"52
+[v _SEGMENTO1 SEGMENTO1 `[16]uc  1 e 16 0 ]
+"53
+[v _SEGMENTO2 SEGMENTO2 `[16]uc  1 e 16 0 ]
 "59 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S99 . 1 `uc 1 RB0 1 0 :1:0 
+[s S183 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -41,11 +59,11 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S108 . 1 `S99 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES108  1 e 1 @6 ]
+[u S192 . 1 `S183 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES192  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S152 . 1 `uc 1 RD0 1 0 :1:0 
+[s S222 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -55,11 +73,11 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S161 . 1 `S152 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES161  1 e 1 @8 ]
+[u S231 . 1 `S222 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES231  1 e 1 @8 ]
 "459
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S120 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S23 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -69,14 +87,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S129 . 1 `uc 1 . 1 0 :2:0 
+[s S32 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S134 . 1 `S120 1 . 1 0 `S129 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES134  1 e 1 @11 ]
-[s S77 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S37 . 1 `S23 1 . 1 0 `S32 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES37  1 e 1 @11 ]
+[s S160 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -85,19 +103,19 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S85 . 1 `S77 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES85  1 e 1 @12 ]
+[u S168 . 1 `S160 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES168  1 e 1 @12 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1245
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
-[s S179 . 1 `uc 1 ADON 1 0 :1:0 
+[s S249 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S184 . 1 `uc 1 . 1 0 :1:0 
+[s S254 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -106,14 +124,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S193 . 1 `uc 1 . 1 0 :1:0 
+[s S263 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S196 . 1 `uc 1 . 1 0 :1:0 
+[s S266 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S199 . 1 `S179 1 . 1 0 `S184 1 . 1 0 `S193 1 . 1 0 `S196 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES199  1 e 1 @31 ]
+[u S269 . 1 `S249 1 . 1 0 `S254 1 . 1 0 `S263 1 . 1 0 `S266 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES269  1 e 1 @31 ]
 "1346
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1416
@@ -124,7 +142,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S58 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S141 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -133,10 +151,22 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S66 . 1 `S58 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES66  1 e 1 @140 ]
-"1862
-[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+[u S149 . 1 `S141 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES149  1 e 1 @140 ]
+[s S112 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S118 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S123 . 1 `S112 1 . 1 0 `S118 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES123  1 e 1 @143 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
 "2977
@@ -151,61 +181,43 @@
 [v _RBIF RBIF `VEb  1 e 0 @88 ]
 "4322
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
-"37 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
-[v _ESTADOS ESTADOS `uc  1 e 1 0 ]
-"38
-[v _ESTADOR ESTADOR `uc  1 e 1 0 ]
-"39
-[v _sum sum `uc  1 e 1 0 ]
-"40
-[v _n1 n1 `uc  1 e 1 0 ]
-"41
-[v _n2 n2 `uc  1 e 1 0 ]
-"42
-[v _change change `uc  1 e 1 0 ]
-"43
-[v _COMP COMP `uc  1 e 1 0 ]
-"44
-[v _SEGMENTO1 SEGMENTO1 `[16]uc  1 e 16 0 ]
-"45
-[v _SEGMENTO2 SEGMENTO2 `[16]uc  1 e 16 0 ]
-"79
+"60 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
 [v _main main `(v  1 e 1 0 ]
 {
-"83
+"64
 } 0
-"84
+"3 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\libreria.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"106
+"28
 } 0
-"132
+"54
 [v _DISPLAY DISPLAY `(v  1 e 1 0 ]
 {
-"147
+"72
 } 0
-"158
+"83
 [v _INTERCAMBIO INTERCAMBIO `(v  1 e 1 0 ]
 {
-"171
+"97
 } 0
-"172
+"98
 [v _BITS BITS `(v  1 e 1 0 ]
 {
-"177
+"103
 } 0
-"55
+"39 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\Lab2.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"77
+"58
 } 0
-"148
+"73 C:\Users\juan\Documents\GitHub\Lab2Digital2\Lab2.X\libreria.c
 [v _REBOTE REBOTE `(v  1 e 1 0 ]
 {
-"157
+"82
 } 0
-"108
+"30
 [v _LEDS LEDS `(v  1 e 1 0 ]
 {
-"131
+"53
 } 0

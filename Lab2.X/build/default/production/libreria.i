@@ -1,4 +1,4 @@
-# 1 "Lab2.c"
+# 1 "libreria.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab2.c" 2
-# 16 "Lab2.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "libreria.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2511,142 +2491,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 34 "Lab2.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
-
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 35 "Lab2.c" 2
+# 1 "libreria.c" 2
 
 # 1 "./libreria.h" 1
 # 38 "./libreria.h"
@@ -2666,33 +2511,106 @@ char change;
 char COMP;
 unsigned char SEGMENTO1[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
 unsigned char SEGMENTO2[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
-# 36 "Lab2.c" 2
+# 2 "libreria.c" 2
+
+void setup(void){
+
+    TRISA = 0;
+    TRISC = 0;
+    TRISD = 0;
+    TRISB = 0xE0;
+    ANSEL = 0;
+    ANSELH = 0x20;
+    OSCCONbits.IRCF = 0b111;
 
 
 
-void __attribute__((picinterrupt(("")))) ISR(void){
+    ADCON0 = 0x35;
+    ADCON1 = 0x00;
 
-    if(RBIF==1){
-        RBIF= 0;
+
+    INTCON = 0xE8;
+    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
+    IOCB = 0xC0;
+    OPTION_REG = 0x80;
+    TMR0 = 2;
+    PORTC =0;
+    n1 = 0;
+    n2 = 0;
+}
+
+void LEDS (void){
+    if(PORTBbits.RB7==1){
+        ESTADOS =1;
+        ESTADOR= 0;
         (INTCONbits.GIE = 0);
-        LEDS();
-        return;
     }
-    if(ADIF ==1) {
-        ADIF = 0;
+    if(PORTBbits.RB7==0 && ESTADOS == 1){
+        sum=sum+1;
+        ESTADOS=0;
+        (INTCONbits.GIE = 1);
         return;
+        }
+    if(PORTBbits.RB6==1){
+        ESTADOS=0;
+        ESTADOR=1;
+        (INTCONbits.GIE = 0);
     }
-    if (T0IF==1){
-        REBOTE();
-        T0IF=0;
-        TMR0=2;
-        PORTA = sum;
+    if(PORTBbits.RB6==0 && ESTADOR ==1){
+        ESTADOR = 0;
+        sum = sum-1;
+        (INTCONbits.GIE = 1);
         return;
     }
 }
-
-void main(void) {
-        setup();
-        DISPLAY();
+void DISPLAY (void) {
+    while(1){
+        if(COMP > sum){
+            PORTDbits.RD0 = 1;
+        }
+        else{
+            PORTDbits.RD0 = 0;
+        }
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        if (ADCON0bits.GO_DONE == 0){
+        BITS();
         INTERCAMBIO();
+        ADCON0bits.GO_DONE = 1;
+        }
+        n1 = ADRESH;
+        n2 = ADRESH;
+        COMP = ADRESH;
+    }
+}
+void REBOTE(void){
+    if(change == 1){
+        change = 0;
+        return;
+    }
+    else{
+        change = 1;
+        return;
+    }
+}
+void INTERCAMBIO (void){
+    if(change == 1){
+        PORTC = SEGMENTO1 [n1];
+        PORTDbits.RD3 = 1;
+        PORTDbits.RD2 = 0;
+        return;
+    }
+    if(change == 0){
+
+        PORTC = SEGMENTO2 [n2];
+        PORTDbits.RD3 = 0;
+        PORTDbits.RD2 = 1;
+        return;
+    }
+}
+void BITS (void){
+    n1 = n1 & 0x0F;
+    n2 = ((n2 & 0xF0)>>4);
+
+    return;
 }
