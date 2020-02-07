@@ -34,7 +34,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "libreria.h"
-#define _XTAL_FREQ 4000000
+
 
 void __interrupt() ISR(void){
 
